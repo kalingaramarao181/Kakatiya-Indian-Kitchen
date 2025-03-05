@@ -1,184 +1,195 @@
-/* Professional Color Palette */
+/* Root Colors */
 :root {
-    --primary-color: #20183a;  /* Dark Royal Blue */
-    --secondary-color: #ffbe0b; /* Gold */
-    --accent-color: #e63946;    /* Vibrant Red */
-    --text-color: #ffffff;
-    --background-light: #f5f5f5;
-    --shadow-color: rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Import Stylish Google Font */
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
-  
-  body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Navbar Styling */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--primary-color);
-    padding: 15px 40px;
-    position: fixed;
-    width: 95%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 5px 15px var(--shadow-color);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  /* Logo */
-  .logo {
-    font-size: 26px;
-    font-weight: bold;
-    color: var(--text-color);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
+  --primary-color: #20183a;
+  --secondary-color: #ffbe0b;
+  --accent-color: #e63946;
+  --text-color: #ffffff;
+  --background-light: #f5f5f5;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
 
-  .kakatiya-logo{
-    height: 70px;
-  }
-  
-  .logo:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Navigation Links */
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary-color);
+  padding: 10px 40px;
+  position: fixed;
+  width: 95%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  z-index: 9999;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Logo */
+.kakatiya-logo {
+  height: 60px;
+}
+
+/* Navigation Links */
+.nav-links {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: var(--primary-color);
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 0;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 0px 5px 10px var(--shadow-color);
+  opacity: 0;
+  z-index: 9999; /* Ensures mobile menu appears */
+}
+
+.nav-links li {
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li:hover {
+  transform: scale(1.1);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s;
+  position: relative;
+}
+
+/* Underline Animation */
+.nav-links a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: var(--secondary-color);
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Reservation Button */
+.btn-reserve {
+  background: var(--secondary-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: var(--primary-color) !important;
+  transition: all 0.3s;
+}
+
+.btn-reserve:hover {
+  background: var(--accent-color);
+  color: var(--text-color) !important;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: var(--text-color);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 2px solid var(--secondary-color);
+  transition: all 0.3s;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.search-icon {
+  color: var(--primary-color);
+  margin-left: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.search-icon:hover {
+  transform: rotate(360deg);
+}
+
+/* Hamburger Menu */
+.menu-icon {
+  display: none;
+  font-size: 32px;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Mobile Dropdown Menu */
+@media (max-width: 900px) {
   .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-  }
-  
-  .nav-links li {
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .nav-links li:hover {
-    transform: scale(1.1);
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
-    font-size: 18px;
-    transition: color 0.3s;
-    position: relative;
-  }
-  
-  /* Underline Animation */
-  .nav-links a::after {
-    content: "";
-    width: 0;
-    height: 3px;
-    background: var(--secondary-color);
-    position: absolute;
-    left: 50%;
-    bottom: -5px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .nav-links a:hover::after {
-    width: 100%;
-    left: 0;
-  }
-  
-  /* Reservation Button */
-  .btn-reserve {
-    background: var(--secondary-color);
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: var(--primary-color) !important;
-    transition: all 0.3s;
-  }
-  
-  .btn-reserve:hover {
-    background: var(--accent-color);
-    color: var(--text-color) !important;
-  }
-  
-  /* Search Box */
-  .search-box {
-    display: flex;
-    align-items: center;
-    background: var(--text-color);
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: 2px solid var(--secondary-color);
-    transition: all 0.3s;
-  }
-  
-  .search-box input {
-    border: none;
-    outline: none;
-    padding: 5px;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .search-icon {
-    color: var(--primary-color);
-    margin-left: 8px;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  
-  .search-icon:hover {
-    transform: rotate(360deg);
-  }
-  
-  /* Hamburger Menu */
-  .menu-icon {
-    display: none;
-    font-size: 32px;
-    color: var(--text-color);
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .menu-icon:hover {
-    transform: scale(1.2);
-  }
-  
-  /* Mobile Dropdown Menu */
-  @media (max-width: 900px) {
-    .nav-links {
       position: absolute;
-      top: 60px;
+      top: 70px;
       right: 0;
       background: var(--primary-color);
       width: 100%;
       flex-direction: column;
       align-items: center;
       gap: 20px;
-      padding: 25px 0;
+      padding: 20px 0;
       transform: translateY(-100%);
-      transition: transform 0.4s ease-in-out;
+      transition: transform 0.4s ease-in-out, opacity 0.3s;
       box-shadow: 0px 5px 10px var(--shadow-color);
       opacity: 0;
       border-top: 2px solid var(--secondary-color);
-    }
-  
-    .nav-links.open {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  
-    .menu-icon {
-      display: block;
-    }
-  
-    .search-box {
-      display: none;
-    }
+      z-index: 999;
   }
-  
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+  .nav-links li {
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+  }
+
+  .nav-links a {
+      font-size: 20px;
+      display: block;
+      width: 100%;
+  }
+
+  .menu-icon {
+      display: block;
+  }
+
+  /* Hide search bar on mobile */
+  .search-box {
+      display: none;
+  }
+}

@@ -108,6 +108,18 @@
 .home-image img:hover {
   transform: scale(1.05);
 }
+.btn-show-more{
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -402,6 +414,14 @@
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     animation: fadeInUp 1s ease-in-out;
+  }
+
+  .testimonial-title{
+    color: white;
+  }
+
+  .stars{
+    color: #ffbe0b;
   }
   
   /* 🔥 Hover Effect */

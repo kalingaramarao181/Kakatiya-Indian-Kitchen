@@ -1,97 +1,127 @@
-import React from "react";
+import React, { useState } from "react";
+
 import "./Home.css";
 
 const Home = () => {
+  const [expandedCategories, setExpandedCategories] = useState({});
+
+  const toggleExpand = (category) => {
+    setExpandedCategories((prev) => ({
+      ...prev,
+      [category]: !prev[category],
+    }));
+  };
 
   const menuData = [
     {
       title: "Chaat",
       image: "images/istockphoto-525416827-612x612.jpg",
       items: [
-        { category: "VEG", dishes: ["Dal Tadka", "Veg Korma", "Chana Masala", "Paneer Tikka Masala", "Shahi Paneer"] },
-        { category: "NON-VEG", dishes: ["Egg Curry", "Chicken Curry", "Goat Curry", "Butter Chicken", "Lamb Curry"] },
+        { category: "VEG", dishes: ["Dal Tadka", "Veg Korma", "Chana Masala", "Aloo Gobi Masala", "Bhendi Masala",
+        "Gutti Vankaya", "Dal Makhani", "Palak Paneer", "Paneer Tikka Masala", "Shahi Paneer",
+        "Malai Kofta", "Kadai Paneer", "Mutter Paneer", "Veg Chettinadu", "Mirchi ka Salan",
+        "Rooti Pachadi", "Mango Palak Dal", "Dondakaya Fry", "Sambar", "Bhendi Fry",
+        "Dosakai Pachadi", "Chinta Chiguru Pappu"] },
+        { category: "NON-VEG", dishes: ["Egg Curry", "Andhra Chicken Curry", "Chicken Curry", "Kadai Chicken", "Chicken Saag",
+        "Chicken Chettinadu", "Chicken Tikka Masala", "Butter Chicken", "Pepper Chicken Gravy",
+        "Goat Curry", "Goat Chettinadu", "Goat Korma", "Lamb Curry", "Lamb Tikka Masala",
+        "Lamb Chettinadu", "Lamb Rohan Josh"] },
       ],
     },
     {
       title: "Appetizers",
-      image: "images/istockphoto-525416827-612x612.jpg",
+      image: "images/Appetizers.jpg",
 
       items: [
-        { category: "VEG", dishes: ["Punugulu", "Gobi 65", "Samosa", "Chilli Paneer", "Onion Pakora"] },
-        { category: "NON-VEG", dishes: ["Chicken 65", "Tadka Chicken Fry", "Goat Sukkah", "Egg Spring Rolls", "Tawa Fish"] },
+        { category: "VEG", dishes: ["Punugulu", "Mysore Bonda", "Gobi Pepper Fry", "Gobi 65", "Gobi Manchurian",
+        "Baby corn Manchurian", "Veg Manchurian", "Chilli Paneer", "Cut Mirchi", "Mix veg Pakora",
+        "Onion Pakora", "Mirchi Bajji", "Samosa", "Onion Samosa", "Veg Spring Rolls", "Soy chaps"] },
+        { category: "NON-VEG", dishes: ["Chicken 65", "Chilli Chicken", "Chicken Manchurian", "Tadka Chicken Fry", "Chicken 555",
+        "Chicken Lollipop", "Kakatiya Chicken Fry", "Ginger Chicken", "Goat Sukkah", "Lamb Pepper Fry",
+        "Tawa Fish", "Egg Spring Rolls", "Karampodi Chicken"] },
       ],
     },
     {
       title: "Entree",
-      image: "images/istockphoto-525416827-612x612.jpg",
+      image: "images/Entree.jpg",
 
       items: [
-        { category: "VEG", dishes: ["Dal Tadka", "Malai Kofta", "Mango Palak Dal", "Paneer Tikka Masala", "Aloo Gobi Masala"] },
-        { category: "NON-VEG", dishes: ["Chicken Tikka Masala", "Goat Korma", "Lamb Curry", "Pepper Chicken Gravy", "Kadai Chicken"] },
+        { category: "VEG", dishes: ["Dal Tadka", "Veg Korma", "Chana Masala", "Aloo Gobi Masala", "Bhendi Masala",
+        "Gutti Vankaya", "Dal Makhani", "Plak Paneer", "Paneer Tikka Masala", "Shahi Paneer",
+        "Malai Kofta", "Kadai Paneer", "Mutter Paneer", "Veg Chettinadu", "Mirchi ka Salan",
+        "Rooti Pachadi", "Mango Palak Dal", "Dondakaya Fry", "Sambar", "Bhendi Fry",
+        "Gonguta Pachadi", "Dosakai Pachadi", "Chinta Chiguru Pappu"] },
+        { category: "NON-VEG", dishes: ["Egg Curry", "Andhra Chicken Curry", "Chicken Curry", "Kadai Chicken", "Chicken Saag",
+        "Chicken Chettinadu", "Chicken Tikka Masala", "Butter Chicken", "Pepper Chicken Gravy",
+        "Goat Curry", "Goat Chettinadu", "Goat Korma", "Lamb Curry", "Lamb Tikka Masala",
+        "Lamb Chettinadu", "Lamb Rohan Josh"] },
       ],
     },
     {
-      title: "Entree",
-      image: "images/istockphoto-525416827-612x612.jpg",
+      title: "Tandoori Grill",
+      image: "images/Tandoori-grill.jpg",
 
       items: [
-        { category: "VEG", dishes: ["Dal Tadka", "Malai Kofta", "Mango Palak Dal", "Paneer Tikka Masala", "Aloo Gobi Masala"] },
-        { category: "NON-VEG", dishes: ["Chicken Tikka Masala", "Goat Korma", "Lamb Curry", "Pepper Chicken Gravy", "Kadai Chicken"] },
+        { category: "VEG", dishes: ["Paneer Tikka"] },
+        { category: "NON-VEG", dishes: ["Tandoori Mix Grill", "Lamb Chops", "Murgh Malai Chicken", "Chicken Tikka", "Chicken Seek Kabab"] },
       ],
     },
     {
-      title: "Entree",
-      image: "images/istockphoto-525416827-612x612.jpg",
+      title: "Italian",
+      image: "images/Italian.jpg",
 
       items: [
-        { category: "VEG", dishes: ["Dal Tadka", "Malai Kofta", "Mango Palak Dal", "Paneer Tikka Masala", "Aloo Gobi Masala"] },
-        { category: "NON-VEG", dishes: ["Chicken Tikka Masala", "Goat Korma", "Lamb Curry", "Pepper Chicken Gravy", "Kadai Chicken"] },
+        { category: "VEG", dishes: ["Veg Alfredo Pasta"] },
+        { category: "NON-VEG", dishes: ["Chicken Alfredo Pasta", "Shrimp Alfredo Pasta"] },
       ],
     },
     {
-      title: "Entree",
-      image: "images/istockphoto-525416827-612x612.jpg",
+      title: "Indo Chinese",
+      image: "images/Indo-chinese.jpg",
 
       items: [
-        { category: "VEG", dishes: ["Dal Tadka", "Malai Kofta", "Mango Palak Dal", "Paneer Tikka Masala", "Aloo Gobi Masala"] },
-        { category: "NON-VEG", dishes: ["Chicken Tikka Masala", "Goat Korma", "Lamb Curry", "Pepper Chicken Gravy", "Kadai Chicken"] },
+        { category: "VEG", dishes: ["Veg Fried Rice", "Veg Schezwan Fried Rice", "Paneer Fried Rice", "Veg Hakka Noodles", "Veg Schezwan Noodles"] },
+        { category: "NON-VEG", dishes: ["Egg Fried Rice", "Chicken Fried Rice", "Shrimp Fried Rice", "Egg Hakka Noodles", "Egg Schezwan Noodles",
+        "Chicken Hakka Noodles", "Chicken Schezwan Noodles", "Shrimp Hakka Noodles", "Shrimp Schezwan Noodles"] },
       ],
     },
     {
-      title: "Entree",
-      image: "images/istockphoto-525416827-612x612.jpg",
+      title: "Biryani",
+      image: "images/Biryani.jpg",
 
       items: [
-        { category: "VEG", dishes: ["Dal Tadka", "Malai Kofta", "Mango Palak Dal", "Paneer Tikka Masala", "Aloo Gobi Masala"] },
-        { category: "NON-VEG", dishes: ["Chicken Tikka Masala", "Goat Korma", "Lamb Curry", "Pepper Chicken Gravy", "Kadai Chicken"] },
+        { category: "VEG", dishes: ["Veg-Biryani", "Paneer Biryani", "Veg-Kheema Biryani"] },
+        { category: "NON-VEG", dishes: ["Egg Biryani", "Chicken Dum Biryani", "Vijayawada Chicken Biryani", "Goat Biryani", "Shrimp Biryani"] },
       ],
     },
     {
-      title: "Entree",
-      image: "images/istockphoto-525416827-612x612.jpg",
+      title: "South Indian",
+      image: "images/South-indian.jpg",
 
       items: [
-        { category: "VEG", dishes: ["Dal Tadka", "Malai Kofta", "Mango Palak Dal", "Paneer Tikka Masala", "Aloo Gobi Masala"] },
-        { category: "NON-VEG", dishes: ["Chicken Tikka Masala", "Goat Korma", "Lamb Curry", "Pepper Chicken Gravy", "Kadai Chicken"] },
+        { category: "VEG", dishes: ["Idly", "Plain Dosa", "Masala Dosa", "Mysore Masala Dosa", "Pongal", "Medhu Wada",
+        "Chole Bathura", "Onion Rava Masala Dosa", "Onion and Chilli Uthappam", "Onion Dosa",
+        "Cheese Dosa"] },
+        { category: "NON-VEG", dishes: [] },
       ],
     },
   ];
 
   const testimonials = [
     {
-      name: "Emma Odinson",
+      name: "Aarav Mehta",
       text: "Risus donec neque egestas ultricies ullamcorper cursus aliquam nunc. Cras est sit libero.",
-      image: "https://randomuser.me/api/portraits/women/1.jpg",
+      image: "https://randomuser.me/api/portraits/men/11.jpg",
     },
     {
-      name: "Dian Anakin",
+      name: "Priya Sharma",
       text: "Tincidunt malesuada odio neque et vel fringilla elit. Placerat turpis mus donec id vel.",
-      image: "https://randomuser.me/api/portraits/women/2.jpg",
+      image: "https://randomuser.me/api/portraits/women/11.jpg",
     },
     {
-      name: "Kyle Smith",
+      name: "Vikram Iyer",
       text: "Placerat turpis mus donec id vel fringilla elit. Tincidunt malesuada odio neque et vel.",
-      image: "https://randomuser.me/api/portraits/men/1.jpg",
+      image: "https://randomuser.me/api/portraits/men/12.jpg",
     },
   ];
 
@@ -144,10 +174,21 @@ const Home = () => {
                 <div key={i}>
                   <h4 className="menu-category">{section.category}</h4>
                   <ul>
-                    {section.dishes.map((dish, j) => (
+                    {(expandedCategories[`${menu.title}-${section.category}`]
+                      ? section.dishes
+                      : section.dishes.slice(0, 5)
+                    ).map((dish, j) => (
                       <li key={j}>{dish}</li>
                     ))}
                   </ul>
+                  {section.dishes.length > 5 && (
+                    <button
+                      className="btn-show-more"
+                      onClick={() => toggleExpand(`${menu.title}-${section.category}`)}
+                    >
+                      {expandedCategories[`${menu.title}-${section.category}`] ? "Show Less" : "Show More"}
+                    </button>
+                  )}
                 </div>
               ))}
             </div>
