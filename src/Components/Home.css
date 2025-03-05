@@ -20,6 +20,7 @@
   padding: 50px;
   position: relative;
   color: var(--text-color);
+  margin-top: 60px;
 }
 
 /* Background Image */
@@ -153,7 +154,7 @@
   }
 
   .home-image img {
-    max-width: 300px;
+    max-width: 220px;
   }
 }
 

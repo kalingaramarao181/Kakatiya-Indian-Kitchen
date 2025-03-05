@@ -167,6 +167,10 @@
       opacity: 0;
       border-top: 2px solid var(--secondary-color);
     }
+
+    .navbar {
+      width: 86%;
+    }
   
     .nav-links.open {
       transform: translateY(0);

@@ -155,7 +155,7 @@ const Home = () => {
           Our restaurant offers a variety of dishes, from fresh seafood to mouth-watering steaks.
         </p>
         <button className="btn-explore">Explore Menu</button>
-      </div>
+      </div>  
       <div className="home-image">
         <img src="images/chef-of-restaurant-walking-with-paper-bag-full-ai-generative-free-png.webp" alt="Delicious Dish" />
       </div>
