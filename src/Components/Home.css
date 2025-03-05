@@ -1,0 +1,510 @@
+/* Import Stylish Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Color Variables */
+:root {
+  --primary-color: #1a1f36;  /* Dark Royal Blue */
+  --secondary-color: #ffbe0b; /* Gold */
+  --accent-color: #e63946;    /* Vibrant Red */
+  --text-color: #ffffff;
+  --background-light: #f5f5f5;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Home Page Styling */
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 50px;
+  position: relative;
+  color: var(--text-color);
+}
+
+/* Background Image */
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/public/images/8229.jpg_wh860.jpg') no-repeat center center/cover;
+  z-index: -1;
+}
+
+/* Dark Overlay for Readability */
+.home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 12, 32, 0.7); /* Dark Overlay */
+  z-index: -1;
+}
+
+/* Content Section */
+.home-content {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.home-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+  text-shadow: 2px 2px 10px var(--shadow-color);
+}
+
+.home-content p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.btn-explore {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+.btn-explore:hover {
+  background: var(--accent-color);
+  color: var(--text-color);
+  transform: scale(1.1);
+}
+
+/* Image Section */
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.home-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 20px var(--shadow-color);
+  transition: transform 0.5s ease-in-out;
+}
+
+.home-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .home-content {
+    max-width: 100%;
+  }
+
+  .home-image {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-content h1 {
+    font-size: 36px;
+  }
+
+  .home-content p {
+    font-size: 18px;
+  }
+
+  .btn-explore {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .home-image img {
+    max-width: 300px;
+  }
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* 🌟 Global Styles */
+.menu-container {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    min-height: 100vh;
+  }
+  
+  /* 🌟 Main Heading */
+  .menu-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ffbe0b;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-in-out;
+    position: relative;
+  }
+  
+  /* 🔥 Heading Underline Animation */
+  .menu-heading::after {
+    content: "";
+    width: 90px;
+    height: 4px;
+    background-color: #ffbe0b;
+    display: block;
+    margin: 8px auto 0;
+    border-radius: 2px;
+    animation: slideIn 1s ease-in-out;
+  }
+  
+  /* 🌟 Grid Layout */
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  /* 🌟 Card Styling */
+  .menu-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    animation: fadeInUp 1s ease-in-out;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* 🔥 Card Hover Effects */
+  .menu-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(255, 190, 11, 0.3);
+    border: 1px solid rgba(255, 190, 11, 0.5);
+  }
+  
+  /* 🌟 Card Title */
+  .menu-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffbe0b;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  /* 🔥 Image Styling */
+  .menu-image {
+    width: 100%;
+    height: 230px;
+    border-radius: 12px;
+    margin-top: 15px;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  /* 🔥 Image Hover Effect */
+  .menu-card:hover .menu-image {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(255, 190, 11, 0.4);
+  }
+  
+  /* 🌟 Content Styling */
+  .menu-content {
+    margin-top: 15px;
+    text-align: left;
+  }
+  
+  /* 🔥 Category Heading */
+  .menu-category {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00a8e8;
+    margin-top: 15px;
+  }
+  
+  /* 🔥 List Styling */
+  .menu-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu-content li {
+    font-size: 1.1rem;
+    padding: 6px 0;
+    color: #fff;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    position: relative;
+    font-weight: 500;
+  }
+  
+  /* 🔥 List Hover Effects */
+  .menu-content li:hover {
+    color: #ffbe0b;
+    font-weight: bold;
+    transform: translateX(10px);
+  }
+  
+  /* 🔥 Add Glow Effect on Hover */
+  .menu-content li:hover::before {
+    content: "⭐";
+    position: absolute;
+    left: -20px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out;
+  }
+  
+  /* 🌟 Animations */
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 90px;
+    }
+  }
+  
+  /* 🌟 Responsive Design */
+  @media (max-width: 1024px) {
+    .menu-heading {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .menu-heading {
+      font-size: 2.2rem;
+    }
+  
+    .menu-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .menu-card {
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .menu-heading {
+      font-size: 2rem;
+    }
+  
+    .menu-title {
+      font-size: 1.8rem;
+    }
+  
+    .menu-category {
+      font-size: 1.3rem;
+    }
+  
+    .menu-content li {
+      font-size: 1rem;
+    }
+  }
+  
+
+
+
+
+  /* 🌟 Testimonial Section */
+.testimonials-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #2b2d42, #1a1a2e, #0f3460);
+  }
+  
+  /* 🔥 Heading Styles */
+  .testimonials-heading {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.4);
+    animation: fadeInDown 1s ease-in-out;
+  }
+  
+  /* 🌟 Grid Layout */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  /* 🌟 Testimonial Card */
+  .testimonial-card {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  /* 🔥 Hover Effect */
+  .testimonial-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(255, 190, 11, 0.3);
+    border: 1px solid rgba(255, 190, 11, 0.5);
+  }
+  
+  /* 🌟 Image Wrapper */
+  .image-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    border: 3px solid #ffbe0b;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* 🔥 Image Styling */
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* 🔥 Hover Image Effect */
+  .testimonial-card:hover .image-wrapper {
+    transform: scale(1.1);
+  }
+  
+  /* 🌟 Testimonial Text */
+  .testimonial-text {
+    font-size: 1.2rem;
+    color: #ddd;
+    font-style: italic;
+    margin-bottom: 15px;
+  }
+  
+  /* 🌟 Testimonial Name */
+  .testimonial-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ffbe0b;
+    text-transform: uppercase;
+  }
+  
+  /* 🌟 Animations */
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* 🌟 Responsive Design */
+  @media (max-width: 1024px) {
+    .testimonials-heading {
+      font-size: 2.4rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .testimonials-heading {
+      font-size: 2rem;
+    }
+  
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .testimonial-card {
+      padding: 25px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .testimonials-heading {
+      font-size: 1.8rem;
+    }
+  
+    .testimonial-text {
+      font-size: 1rem;
+    }
+  
+    .testimonial-name {
+      font-size: 1.2rem;
+    }
+  }
+  

@@ -1,0 +1,118 @@
+/* 🌟 Footer Section */
+.footer-section {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: #ddd;
+    padding: 60px 20px;
+    min-height: 50vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* 🌟 Container */
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* 🌟 Titles */
+  .footer-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00e6e6;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #00e6e6;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  /* 🌟 Text */
+  .footer-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 5px 0;
+    color: #bbb;
+  }
+  
+  /* 🌟 Links */
+  .footer-link {
+    color: #00e6e6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: #ffae00;
+  }
+  
+  .footer-links li {
+    list-style: none;
+    margin: 8px 0;
+  }
+  
+  .footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #ffae00;
+  }
+  
+  /* 🌟 Icons */
+  .footer-icons span {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: transform 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+  
+  .footer-icons span:hover {
+    transform: scale(1.2);
+    color: #ffae00;
+  }
+  
+  /* 🌟 Reservation Button */
+  .reservation-btn {
+    padding: 10px 20px;
+    background-color: #ffae00;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+  }
+  
+  .reservation-btn:hover {
+    background-color: #00e6e6;
+    transform: scale(1.1);
+  }
+  
+  /* 🌟 Responsive Design */
+  @media (max-width: 768px) {
+    .footer-title {
+      font-size: 1.5rem;
+    }
+    .footer-text {
+      font-size: 0.9rem;
+    }
+    .reservation-btn {
+      width: 100%;
+      padding: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-title {
+      font-size: 1.2rem;
+    }
+    .footer-text {
+      font-size: 0.8rem;
+    }
+  }
+  
